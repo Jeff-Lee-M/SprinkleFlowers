@@ -23,7 +23,7 @@ static const CGFloat kWinnerHeight = 50.0;
 
 //动画时间
 static const CGFloat kWinnerAnimationDuration = 0.4;
-static const CGFloat kWinnerStayTime = 4.0;
+//static const CGFloat kWinnerStayTime = 4.0;
 
 //刚开始每个burst发射出花花的个数
 static const CGFloat kBirthRate = 35.0;
@@ -71,7 +71,7 @@ static const CGFloat kBirthRate = 35.0;
         strongSelf.winnerView.frame = CGRectMake(kWinnerX, kWinnerY, kWinnerWidth, kWinnerHeight);
     } completion:^(BOOL finished) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(kWinnerStayTime * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(4.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [UIView animateWithDuration:kWinnerAnimationDuration animations:^{
                 strongSelf.winnerView.frame = CGRectMake(-kWinnerWidth, kWinnerY, kWinnerWidth, kWinnerHeight);
             } completion:^(BOOL finished) {
